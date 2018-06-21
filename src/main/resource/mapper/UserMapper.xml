@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kevin.dao.UserDao">
+    <select id="getPasswordByUserName" resultType="com.kevin.pojo.User">
+    select * FROM users WHERE users.username = #{username};
+</select>
+    <select id="getRolesByUserName" resultType="java.lang.String">
+        SELECT role_name FROM user_roles WHERE user_roles.username =#{username};
+    </select>
+    <!--<select id="getPermissionsByUserName" resultType="java.lang.String">-->
+
+    <!--</select>-->
+</mapper>
